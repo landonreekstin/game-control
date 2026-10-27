@@ -140,7 +140,7 @@ def dashboard(request: Request, token: str = Query(...)):
     verify_token(token)
     states = build_server_states(token)
     return templates.TemplateResponse(
-        "index.html", {"request": request, "servers": states, "token": token}
+        request, "index.html", {"servers": states, "token": token}
     )
 
 
